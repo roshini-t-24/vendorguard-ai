@@ -1,0 +1,41 @@
+kind: workflow
+trigger:
+  kind: OnConversationStart
+  id: trigger_wf
+  actions:
+    - kind: InvokeAzureAgent
+      id: invoice_extractor_node
+      agent:
+        name: invoice-extractor-agent
+      conversationId: =System.ConversationId
+      input:
+        messages: =System.LastMessage.Text
+      output:
+        autoSend: true
+        messages: Local.extracted_invoice_text
+        responseObject: Local.extracted_invoice_json
+    - kind: InvokeAzureAgent
+      id: contract_grounder_node
+      agent:
+        name: contract-grounding-agent
+      conversationId: =System.ConversationId
+      input:
+        messages: =Local.extracted_invoice_text
+      output:
+        autoSend: true
+        messages: Local.grounding_audit_report
+    - kind: InvokeAzureAgent
+      id: policy_governor_node
+      agent:
+        name: policy-governor-agent
+      conversationId: =System.ConversationId
+      input:
+        messages: =Local.grounding_audit_report
+      output:
+        autoSend: true
+        messages: Local.final_reconciliation_verdict
+    - kind: EndConversation
+      id: node-1789977930293
+id: ""
+name: vendorguard-workflow
+description: ""

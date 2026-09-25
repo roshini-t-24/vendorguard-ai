@@ -1,0 +1,63 @@
+{
+  "inv_101_compliant": {
+    "invoice_number": "INV-101",
+    "vendor_id": "VEND-001",
+    "vendor_name": "CloudScale Logistics",
+    "purchase_order_id": "PO-2026-8801",
+    "invoice_date": "2026-09-18",
+    "currency": "USD",
+    "line_items": [
+      {
+        "item_id": "SRV-LOG-01",
+        "description": "Standard Warehouse Routing Service",
+        "unit_rate": 85.0,
+        "quantity": 100.0,
+        "total_amount": 8500.0
+      }
+    ],
+    "total_amount": 8500.0
+  },
+  "inv_102_discrepancy": {
+    "invoice_number": "INV-102",
+    "vendor_id": "VEND-002",
+    "vendor_name": "Apex Cloud Consulting",
+    "purchase_order_id": "PO-2026-9140",
+    "invoice_date": "2026-09-18",
+    "currency": "USD",
+    "line_items": [
+      {
+        "item_id": "CON-AI-01",
+        "description": "Principal AI Architect Consultation",
+        "unit_rate": 260.0,
+        "quantity": 40.0,
+        "total_amount": 10400.0
+      },
+      {
+        "item_id": "CON-DEV-02",
+        "description": "Senior Python Backend Engineer",
+        "unit_rate": 130.0,
+        "quantity": 60.0,
+        "total_amount": 7800.0
+      }
+    ],
+    "total_amount": 18200.0
+  },
+  "inv_103_unauthorized": {
+    "invoice_number": "INV-103",
+    "vendor_id": "VEND-999",
+    "vendor_name": "Shadow Corp Global",
+    "purchase_order_id": "PO-FAKE-0000",
+    "invoice_date": "2026-09-19",
+    "currency": "USD",
+    "line_items": [
+      {
+        "item_id": "UNAUTH-SEC-99",
+        "description": "Unregistered Cloud Penetration Testing",
+        "unit_rate": 500.0,
+        "quantity": 10.0,
+        "total_amount": 5000.0
+      }
+    ],
+    "total_amount": 5000.0
+  }
+}
